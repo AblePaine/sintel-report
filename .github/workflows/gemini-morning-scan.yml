@@ -36,7 +36,7 @@ jobs:
                     "Add it under repo Settings > Secrets and variables > Actions.")
               sys.exit(1)
 
-          model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash").strip()
+          model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite").strip()
           with open(".github/gemini-scan-prompt.md", encoding="utf-8") as f:
               prompt = f.read().strip()
 
