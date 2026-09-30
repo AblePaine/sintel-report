@@ -1,0 +1,93 @@
+name: Gemini morning scan
+
+# Runs the Gemini morning Google-scan via the Gemini API (with Google Search
+# grounding) and commits the result to gemini-scans/YYYY-MM-DD.md.
+# Needs the GEMINI_API_KEY repo secret (Settings > Secrets and variables > Actions).
+# Model can be overridden with the GEMINI_MODEL repo variable.
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # 08:00 US Eastern daylight; 07:00 after the Nov 1 fallback
+  workflow_dispatch: {}      # manual run (e.g. to test after adding the secret)
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    env:
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Gemini scan and write lane file
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, sys, urllib.request, urllib.error
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          key = os.environ.get("GEMINI_API_KEY", "").strip()
+          if not key:
+              print("::error::GEMINI_API_KEY secret is not set. "
+                    "Add it under repo Settings > Secrets and variables > Actions.")
+              sys.exit(1)
+
+          model = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash").strip()
+          with open(".github/gemini-scan-prompt.md", encoding="utf-8") as f:
+              prompt = f.read().strip()
+
+          body = {
+              "contents": [{"parts": [{"text": prompt}]}],
+              "tools": [{"google_search": {}}],
+              "generationConfig": {"temperature": 0.7, "maxOutputTokens": 8192},
+          }
+          url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+                 f"{model}:generateContent")
+          req = urllib.request.Request(
+              url,
+              data=json.dumps(body).encode("utf-8"),
+              headers={"x-goog-api-key": key, "Content-Type": "application/json"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=300) as resp:
+                  data = json.load(resp)
+          except urllib.error.HTTPError as e:
+              detail = e.read().decode("utf-8", "replace")[:2000]
+              print(f"::error::Gemini API HTTP {e.code}: {detail}")
+              sys.exit(1)
+
+          texts = []
+          for cand in data.get("candidates", []):
+              for part in cand.get("content", {}).get("parts", []):
+                  if isinstance(part.get("text"), str):
+                      texts.append(part["text"])
+          scan = "".join(texts).strip()
+          if not scan:
+              print("::error::Gemini API returned no text; not writing a lane file.")
+              print(json.dumps(data)[:2000])
+              sys.exit(1)
+
+          day = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
+          path = f"gemini-scans/{day}.md"
+          with open(path, "w", encoding="utf-8") as f:
+              f.write(f"# Gemini morning scan — {day}\n\n" + scan.rstrip() + "\n")
+          print(f"wrote {path} ({len(scan)} chars)")
+          PYEOF
+
+      - name: Commit lane file
+        run: |
+          git config user.name "sintel-bot"
+          git config user.email "sintel-bot@users.noreply.github.com"
+          git add gemini-scans/
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+          else
+            DAY=$(TZ=America/New_York date +%F)
+            git commit -m "gemini scan ${DAY}"
+            git push origin main
+          fi
