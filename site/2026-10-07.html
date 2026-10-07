@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Daily Intel Report — Wed, Oct 7, 2026 — sintel</title>
+<style>
+:root{
+  --bg:#0d1015; --panel:#141922; --text:#e8ebf0; --muted:#98a2b3;
+  --accent:#f0a832; --accent-dim:rgba(240,168,50,.12);
+  --link:#8ab8ff; --border:#232b38; --code:#0a0d12;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:Georgia,'Times New Roman',serif; font-size:18px; line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px; margin:0 auto; padding:0 22px}
+.site-head{
+  border-bottom:1px solid var(--border); padding:20px 0; margin-bottom:34px;
+  display:flex; align-items:baseline; justify-content:space-between;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+.brand{font-weight:800; font-size:20px; letter-spacing:.5px; color:var(--text); text-decoration:none}
+.brand span{color:var(--accent)}
+.tag{color:var(--muted); font-size:13px; margin-left:10px}
+.site-head a.nav{color:var(--muted); font-size:14px; text-decoration:none}
+.site-head a.nav:hover{color:var(--accent)}
+h1{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:30px; line-height:1.3; margin:6px 0 4px; letter-spacing:-.3px;
+}
+.dateline{color:var(--muted); font-size:14px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; margin-bottom:30px}
+h2{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:21px; margin:38px 0 10px; letter-spacing:-.2px; scroll-margin-top:18px;
+}
+h2 .anchor{color:var(--border); text-decoration:none; margin-left:8px; font-size:15px}
+h2:hover .anchor{color:var(--accent)}
+p{margin:0 0 16px}
+ul{margin:0 0 18px; padding-left:24px}
+li{margin-bottom:12px}
+li::marker{color:var(--accent)}
+a{color:var(--link); text-decoration:none; border-bottom:1px dotted rgba(138,184,255,.45)}
+a:hover{border-bottom-style:solid}
+strong{color:#fff}
+.edge-signal{
+  background:var(--accent-dim); border:1px solid rgba(240,168,50,.35);
+  border-left:4px solid var(--accent); border-radius:10px;
+  padding:20px 22px; margin:34px 0;
+}
+.edge-signal h2{margin-top:0; color:var(--accent)}
+.edge-signal p:last-child{margin-bottom:0}
+.edition-card{
+  display:block; border:1px solid var(--border); border-radius:12px;
+  padding:20px 22px; margin-bottom:18px; text-decoration:none; border-bottom:1px solid var(--border);
+  background:var(--panel); transition:border-color .15s;
+}
+a.edition-card:hover{border-color:var(--accent)}
+.edition-card .ed-date{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:13px; color:var(--accent); text-transform:uppercase; letter-spacing:1px}
+.edition-card h2{margin:8px 0 6px; color:var(--text)}
+.edition-card p{color:var(--muted); font-size:15px; margin:0; line-height:1.6}
+.site-foot{
+  border-top:1px solid var(--border); margin-top:50px; padding:22px 0 40px;
+  color:var(--muted); font-size:13px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+@media (max-width:640px){ body{font-size:16px} h1{font-size:24px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <div><a class="brand" href="index.html">sintel<span>.</span></a><span class="tag">daily intel report</span></div>
+    <a class="nav" href="index.html">all editions</a>
+  </header>
+  <main>
+    <h1>Daily Intel Report — Wed, Oct 7, 2026</h1>
+    <div class="dateline">Wednesday, October 7, 2026</div>
+<p>Scan provenance: both morning lanes landed (grok-scans + gemini-scans). Every item below verified against live sources unless marked as a scan claim. Gemini lane notes: the MCP stateless-spec item is a July 2026 blog post (standing context, not news); two named items had no citable source and were dropped (a &quot;$30M agent-identity Series A&quot; and a FedRAMP hardening item); EmbeddingGemma 2 (740M Apache 2.0 multimodal embeddings) surfaced only via a TestingCatalog aggregator brief — no primary source, marked claim. Folded: the morning flag (bitcoin tokenized compute) — now a core standing section; full dig in the daily-intel-report goal files.</p>
+<h2 id="past-24h">Past 24h<a class="anchor" href="#past-24h">#</a></h2>
+<ul><li><strong>Agent commerce got its front door — and the money rail arrived the same week.</strong> Sierra + Meta published the <strong>Personal Agent Protocol</strong> (Oct 6): an OAuth-based open standard for how a personal agent authenticates with a business — guest/read-only/write tiers, sessions persisting across channels, merchant choice of website, APIs (MCP/OpenAPI), or its own agent. Founding partners: Shopify, Stripe, Walmart, Genesys, Instinct, Rocket (plus NiCE and Decagon per Meta&#x27;s list). <strong>Absent: Amazon, OpenAI, Anthropic.</strong> v0.1 spec lands later in October; the payments extension is NOT in v0.1 even though Stripe is a founding partner. The rival: Visa&#x27;s Trusted Agent Protocol (June) — 175M merchants, and Stripe and Shopify sit in both camps. The governance hole: eight logos, no license, no spec, no foundation yet. <a href="https://aiweekly.co/alerts/sierra-meta-publish-personal-agent-protocol-backed-by-walmart">aiweekly</a> · <a href="https://www.unite.ai/sierra-unveils-personal-agent-protocol-built-with-meta-and-partners/">unite.ai</a> · <a href="https://forkast.news/sierra-and-metas-personal-agent-protocol-gives-commerce-a-common-front-door-for-those-willing-to-open-it/">forkast</a></li><li><strong>Alibaba Cloud x Sui: per-call stablecoin settlement for agents.</strong> Announced live Oct 7 at Sui Basecamp (Singapore, alongside TOKEN2049): Alibaba Cloud services reachable through Sui Agent Payments — an agent holds a stablecoin budget and pays per API call, settled on-chain. The ledger is the bill; no invoice. Same week Mysten unveiled <strong>Verifiable Agent Arbiter with Google Cloud</strong> — a system to check whether an agent stayed inside its permissions rather than trusting it. Actual agent adoption and volumes are not established by the announcement. <a href="https://startupfortune.com/sui-lets-ai-agents-pay-alibaba-cloud-in-stablecoins-for-every-single-task/">startupfortune</a> · <a href="https://phemex.com/news/article/sui-integrates-alibaba-cloud-services-into-agent-payments-system-99027">phemex</a></li><li><strong>OpenAI shipped the decision primitive: Decisions API in public beta (Oct 6).</strong> Typed answers over text/image inputs — probability, fixed choice, numeric score — claimed ~10x faster than the Responses API (~150ms), powered only by gpt-6-luna at <strong>$0.10/1M input tokens, output free</strong>, with zero-data-retention and HIPAA support. Same announcement: <strong>paid API tiers cut from five to three</strong> (Build / Launch / Grow; $500/$5k/$200k monthly usage limits). The quiet insight: stop using a chat completion as the control plane — a typed-decision endpoint folds parsing, confidence, and retries into the API contract. <a href="https://the-decoder.com/openai-launches-decisions-api-that-reduces-complex-evaluations-to-yes-no-or-pick-one/">the-decoder</a> · <a href="https://www.unite.ai/openai-releases-decisions-api-in-public-beta-powered-by-gpt-6-luna/">unite.ai</a> · <a href="https://community.openai.com/t/decisions-api-is-now-available-in-public-beta/1403877">community.openai.com</a></li><li><strong>GPT-6 rolling out to all ChatGPT tiers with Intelligent UI (Oct 7).</strong> Responses rendered as interactive interfaces — buttons, forms, charts, tappable experiences — not text alone. Paid tiers first; Free and Go on Oct 8. OpenAI claims 1.2B weekly ChatGPT users. Also new: <strong>GPT-6.1 Sol</strong>, an agentic-coding/computer-use upgrade, near-Astra performance at ~1/5 the token prices. <a href="https://www.unite.ai/openai-brings-gpt-6-with-intelligent-ui-to-all-chatgpt-tiers/">unite.ai</a> · <a href="https://alphasignal.ai/news/openai-s-decisions-api-gives-developers-a-constrained-gpt-6-luna-router">alphasignal</a></li><li><strong>Personal-assistant wars: Hark Pro launched (Oct 6).</strong> Brett Adcock&#x27;s startup (privacy pitch — data never sold), free tier + $20/mo 2x usage + $100/mo 10x, built on a model trained for computer use with <strong>Handoff</strong> (a cloud computer that clicks through sites as a person would); first devices in 2027. Pricing matches Meta&#x27;s Muse tiers exactly. Muse, per reports, hit the top of the US App Store within a month of launch. <a href="https://techcrunch.com/2026/10/06/hark-releases-an-ai-personal-assistant-with-a-focus-on-privacy/">techcrunch</a> · <a href="https://www.fastcompany.com/91618831/how-hark-designed-an-ai-assistant-thats-actually-helpful">fastcompany</a></li><li><strong>Containment became the product: Microsoft&#x27;s Execution Containers GA (Oct 7).</strong> MXC on Windows 11 — define which files and networks agents can touch, enforced at runtime; GitHub Copilot, OpenAI Codex, and NVIDIA OpenShell already support it. GitHub&#x27;s HydraFusion routing extends to local Windows models (previews later this month). Copilot+ PCs get permission-based local-file access in the coming months. Pair with <strong>Apollo&#x27;s GraphOS Agent Services (Oct 7)</strong>: field-level controls between agents and enterprise APIs, enforced outside the model&#x27;s judgment loop; Intuit piloting in private preview. The control-plane thesis is now shipping as product. <a href="https://windowsforum.com/news/microsoft-october-7-windows-event-whats-confirmed-on-local-ai-agents-and-surface-laptop-ultra.447098/">windowsforum</a> · <a href="https://runtimewire.com/article/apollo-graphos-agent-services-enterprise-api-controls">runtimewire</a></li><li><strong>Tokenized compute — the new core standing section.</strong> Jason Lowery (Oct 7, 3.1K likes): BTC = transferable proof of compute expended in the past; AI inference tokens = claims on compute to be consumed in the future — &quot;the real fun starts when BlackRock realizes BTC is tokenized compute.&quot; Michael Sineni&#x27;s clarification: &quot;reserve&quot; means stored, unfakeable proof-of-power bits, spendable as micropayments — not a savings account. The sharp counter: PoW is burned energy, not reusable FLOPs (and the Grok bot itself argued for purpose-built tokenized-compute markets instead of BTC as the instrument). Standing watch: Lowery/Sineni feeds, &quot;tokenized compute&quot; narrative spread into institutional research, agent settlement rails (x402, stablecoin, Lightning), the counter-thesis. <a href="https://x.com/JasonPLowery/status/2107629586603500006">Lowery</a> · <a href="https://x.com/MichaelFSineni/status/2107822015658779119">Sineni</a></li><li><strong>Open-model countdown.</strong> Le Chonk: weights land <strong>Oct 27</strong> under an as-yet-unpublished custom license (not Apache 2.0 — the license is what makes it own-metal-usable). Beam: still pending &quot;later this month&quot; under Apache 2.0; the &quot;open model you cannot download is a press release&quot; line is sticking. Also today: Sesame previewed voice agents with their own computers + Google apps + MCP attach, with an all-day AI glasses OS roadmap for 2027. <a href="https://www.unite.ai/mistral-unveils-1-05t-parameter-le-chonk-moe-model-in-public-preview/">unite.ai</a> · <a href="https://www.testingcatalog.com/sesame-updates-voice-agents-with-their-own-computers/">testingcatalog</a></li><li><strong>Hardware.</strong> Used RTX 5090s: <strong>$3,822 avg Oct 2026 (+$93 m/m)</strong>; new at $4,999 on B&amp;H — the AI-firm bulk-buy vacuum continues (extreme resale past 500% over MSRP). Used RTX 3090: $1,199, the first monthly dip in a year. The read is unchanged: the door hasn&#x27;t opened on the ≤$850 watch target, but pullbacks are the thing to track now. <a href="https://bestvaluegpu.com/history/new-and-used-rtx-5090-price-history-and-specs/">bestvaluegpu</a></li><li><strong>Enterprise/lab.</strong> Claude for Google Workspace in public beta (all paid plans) — Claude edits Docs/Sheets/Slides with per-change approval. Google: Gemini in Chrome expands to India; free/AI Plus users lose Pro access Oct 9. Google&#x27;s PageBreak AI agent reported 500+ XSS flaws found in web apps. <a href="https://turbo.gadgets360.com/en/ai/claude-text-watermark-ai-generated-content-anthropic-news-11897873">gadgets360</a></li><li><strong>Money.</strong> ElevenLabs: <strong>$22B valuation after a $300M employee tender</strong> (financial-services adoption driving it). Stuut: $52.5M Series B for order-to-cash agents. Melius: $25M for a creative-work agents lab. Carry: OpenAI reportedly in talks with UAE IA + BlackRock for $30B at ~$1.4T pre-money; Etched fielding funding at $40B+. <a href="https://aiagentsdirectory.com/news/ai-agents-news-brief-october-7-2026">aiagentsdirectory</a></li><li><strong>Social signal.</strong> Elon&#x27;s note that the Grok bot now routes to best backends (Claude Opus 5.5, MidJourney, Suno cited) — the assistant layer becoming a router, not a model; same day the bot publicly debated the tokenized-compute thesis against BTC-as-instrument. <a href="https://x.com/elonmusk/status/2107724314451878104">elonmusk</a></li></ul>
+<p><strong>Watch items.</strong> Alternate private networks: quiet today — Instinct&#x27;s group-chat growth loop remains the week&#x27;s traction signal. CPU-for-agents: quiet — latest is Oct 5&#x27;s CoreWeave Vera Rubin NVL72 in production. Right to self-host: Microsoft&#x27;s MXC is containment-as-platform (not a ban); textGrain stays the output-policing entry. Adoption-vs-financing: no new rental-rate print today; last reads had rents rising — the a16z falsification marker stays untriggered.</p>
+<div class="edge-signal">
+<h2 id="edge-signal">Edge signal<a class="anchor" href="#edge-signal">#</a></h2>
+<p>The two missing pieces of the agent economy both moved this week: <strong>permission (PAP: Sierra + Meta, Oct 6)</strong> and <strong>payment (Sui + Alibaba Cloud per-call stablecoin settlement, Oct 7)</strong> — while the same week saw labs asking parliament for agent-breach disclosure cages and Microsoft shipping runtime containment. The stack is crystallizing in the order that matters: identity, then money, then cages. The toll booths being poured this week sit at the auth layer and the billing layer — and the metered-billing one is already the shape the x402 pilot runs.</p>
+</div>
+  </main>
+  <footer class="site-foot">sintel — evening intel briefing on the AI paradigm shift. Generated from the nightly edition; not indexed while in preview.</footer>
+</div>
+</body>
+</html>
